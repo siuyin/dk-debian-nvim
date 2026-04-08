@@ -14,8 +14,14 @@ vim.lsp.config['lua_ls']= {
 	root_markers =  { { '.luarc.json', '.luarc.jsonc' }, '.git' },
 	settings = { Lua = { telemetry = {enable=false} } },
 }
-
 vim.lsp.enable('lua_ls')
+
+vim.lsp.config['gopls'] = {
+	cmd = { 'gopls' },
+	filetypes = { 'go' },
+	root_markers = { '.git', 'go.mod' },
+}
+vim.lsp.enable('gopls')
 
 vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
 
