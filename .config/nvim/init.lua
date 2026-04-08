@@ -3,8 +3,19 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 
 -- vim.lsp.config()
-
 -- vim.lsp.enable('ruff')
+
+vim.lsp.config['lua_ls']= {
+	cmd = { 'lua-language-server',
+		'--logpath=' .. vim.fn.expand("~/.cache/lua-language-server/log"),
+		'--metapath=' .. vim.fn.expand("~/.cache/lua-language-server/meta"),
+	},
+	filetypes = { 'lua' },
+	root_markers =  { { '.luarc.json', '.luarc.jsonc' }, '.git' },
+	settings = { Lua = { telemetry = {enable=false} } },
+}
+
+vim.lsp.enable('lua_ls')
 
 vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
 
