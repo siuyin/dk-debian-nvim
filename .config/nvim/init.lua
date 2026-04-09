@@ -27,8 +27,11 @@ vim.lsp.enable('gopls')
 vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
 
 vim.pack.add({
-	"https://github.com/fatih/vim-go"
+	"https://github.com/fatih/vim-go",
+	"https://github.com/mason-org/mason.nvim",
 })
+
+require("mason").setup()
 
 -- Define an autocommand group to prevent duplicate autocmds
 vim.api.nvim_create_augroup("LspFormatting", { clear = true })
