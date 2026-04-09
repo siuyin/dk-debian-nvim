@@ -17,5 +17,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
 Then `nvm install 24.14.0` to install node v24 and its associated npm.
 
+Note: nodejs v25 required libatomic1
+```
+sudo apt update
+sudo apt install libatomic1
+```
+
 ## Triggering Completions
 `Ctrl-x Ctrl-o` followed by space for snippet completion.

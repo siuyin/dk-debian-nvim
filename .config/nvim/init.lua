@@ -3,33 +3,18 @@ vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.autowrite = true
 
--- vim.lsp.config()
--- vim.lsp.enable('ruff')
-
-vim.lsp.config['lua_ls']= {
-	cmd = { 'lua-language-server',
-		'--logpath=' .. vim.fn.expand("~/.cache/lua-language-server/log"),
-		'--metapath=' .. vim.fn.expand("~/.cache/lua-language-server/meta"),
-	},
-	filetypes = { 'lua' },
-	root_markers =  { { '.luarc.json', '.luarc.jsonc' }, '.git' },
-	settings = { Lua = { telemetry = {enable=false} } },
-}
-vim.lsp.enable('lua_ls')
-
-vim.lsp.config['gopls'] = {
-	cmd = { 'gopls' },
-	filetypes = { 'go' },
-	root_markers = { '.git', 'go.mod' },
-}
-vim.lsp.enable('gopls')
-
-vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
-
 vim.pack.add({
 	"https://github.com/fatih/vim-go",
 	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
 })
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('gopls')
+vim.lsp.enable('emmet_language_server')
+
+vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
+
 
 require("mason").setup()
 
