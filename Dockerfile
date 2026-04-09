@@ -25,6 +25,5 @@ RUN cat agent-startup-code >> .profile
 RUN cat profile_paths >> .profile 
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
-RUN /usr/local/go/bin/go install golang.org/x/tools/gopls@latest
 
 ENTRYPOINT ["bash","--login"]

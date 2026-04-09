@@ -1,6 +1,7 @@
 vim.opt.hlsearch = false
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.autowrite = true
 
 -- vim.lsp.config()
 -- vim.lsp.enable('ruff')
@@ -24,6 +25,10 @@ vim.lsp.config['gopls'] = {
 vim.lsp.enable('gopls')
 
 vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
+
+vim.pack.add({
+	"https://github.com/fatih/vim-go"
+})
 
 -- Define an autocommand group to prevent duplicate autocmds
 vim.api.nvim_create_augroup("LspFormatting", { clear = true })
