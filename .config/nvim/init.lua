@@ -12,6 +12,9 @@ vim.pack.add({
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('gopls')
 vim.lsp.enable('emmet_language_server')
+vim.lsp.enable('ruff')
+vim.lsp.enable('ty')
+
 
 vim.keymap.set("n","<leader>e", vim.diagnostic.open_float, {bufnr = bufnr})
 
