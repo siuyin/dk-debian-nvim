@@ -23,5 +23,17 @@ sudo apt update
 sudo apt install libatomic1
 ```
 
+### uv, ruff and ty for python
+install uv:
+```
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+install ruff and ty:
+```
+uv tool install ruff@latest
+uv tool install ty@latest
+```
+
 ## Triggering Completions
 `Ctrl-x Ctrl-o` followed by space for snippet completion.
