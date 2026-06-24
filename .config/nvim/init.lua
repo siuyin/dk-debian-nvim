@@ -2,6 +2,8 @@ vim.opt.hlsearch = false
 vim.opt.grepprg = "rg --vimgrep"
 vim.opt.grepformat = "%f:%l:%c:%m"
 vim.opt.autowrite = true
+vim.opt.clipboard = unnamedplus
+
 
 vim.pack.add({
 	"https://github.com/fatih/vim-go",

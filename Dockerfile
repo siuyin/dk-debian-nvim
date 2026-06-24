@@ -1,9 +1,9 @@
 FROM debian:13-slim AS unpacker
 RUN apt update && apt install -y xz-utils
 ADD https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz /usr/local/
-ADD https://go.dev/dl/go1.26.2.linux-amd64.tar.gz /usr/local
+ADD https://go.dev/dl/go1.26.4.linux-amd64.tar.gz /usr/local
 RUN tar -C /usr/local -xf /usr/local/nvim-linux-x86_64.tar.gz
-RUN tar -C /usr/local -xf /usr/local/go1.26.2.linux-amd64.tar.gz
+RUN tar -C /usr/local -xf /usr/local/go1.26.4.linux-amd64.tar.gz
 RUN ls -l /usr/local
 RUN ls -l /usr/local/go
 
